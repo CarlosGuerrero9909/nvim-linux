@@ -28,7 +28,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " visual
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lilydjwg/colorizer'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
@@ -38,7 +38,9 @@ Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
 
 " themes
-Plug 'dracula/vim',{'as':'dracula'}
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+"Plug 'dracula/vim',{'as':'dracula'}
 
 " Tree
 Plug 'scrooloose/nerdtree'
@@ -79,8 +81,11 @@ Plug 'tpope/vim-repeat'
 call plug#end()
 
 " Theme
-set background=dark
-colorscheme dracula
+"set background=dark
+"colorscheme dracula
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "medium"
+highlight Normal ctermbg = NONE
 
 " ----------------------- MAPS --------------
 
@@ -150,6 +155,16 @@ nnoremap <Leader>gl :Gpull<cr>
 
 
 "------------------------- PLUGINS CONFIGURATION--------------------------
+
+"coc
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Formatting selected code.
+xmap <leader>fr  <Plug>(coc-format-selected)
+nmap <leader>fr  <Plug>(coc-format-selected)
 
 " treesitter 
 "activa la resolucion de colores del plug (activar cada idioma con ej-> :TSInstal java)
