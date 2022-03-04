@@ -28,7 +28,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " visual
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lilydjwg/colorizer'
-"Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
@@ -44,6 +44,7 @@ Plug 'itchyny/lightline.vim'
 
 " Tree
 Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " typing
 Plug 'jiangmiao/auto-pairs'
@@ -72,10 +73,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'ddollar/nerdcommenter'
+Plug 'mattn/emmet-vim'
 
 " git
 Plug 'tpope/vim-fugitive'
-
 Plug 'tpope/vim-repeat'
 
 call plug#end()
@@ -109,6 +110,7 @@ nnoremap <Leader>bd :bdelete<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>vs :vsp<CR>
 nnoremap <leader>sp :sp<CR>
+nnoremap <leader>b :buffers<CR>
 nmap <F5> :source ~/.config/nvim/init.vim<CR>
 vmap <F5> :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>e :e$MYVIMRC<CR> 
